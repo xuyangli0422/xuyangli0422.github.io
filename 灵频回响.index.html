@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灵频回响 - 连接宇宙深处的频率</title>
+    <style>
+        :root {
+            --bg-color: #0f0c29;
+            --primary-color: #302b63;
+            --accent-color: #00d2ff;
+            --text-color: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, var(--bg-color), var(--primary-color), #24243e);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* 导航栏 */
+        header {
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 12, 41, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: var(--glass-border);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, #fff, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at center, rgba(0, 210, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-color);
+            color: #000;
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
+        }
+
+        /* 内容板块容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        /* 介绍与用法网格 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .step-list li {
+            margin-bottom: 15px;
+            list-style: none;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .step-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* 合作伙伴/底部区域 */
+        footer {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 60px 20px;
+            margin-top: 50px;
+            border-top: var(--glass-border);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .main-company, .tech-partner {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .tech-partner-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .tech-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            display: block;
+            letter-spacing: 1px;
+        }
+
+        .address {
+            font-style: normal;
+            color: #aaa;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .partner-logo {
+            width: 250px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 导航 -->
+    <header>
+        <div class="logo">灵频回响 SPIRIT ECHO</div>
+        <nav>
+            <!-- 此处可添加具体菜单 -->
+        </nav>
+    </header>
+
+    <!-- 核心区域 -->
+    <section class="hero">
+        <h1>灵频回响</h1>
+        <p>探索意识的边界，聆听灵魂的共鸣。通过独有的频率算法，连接内在与宇宙的桥梁。</p>
+        <!-- 3. 放上灵频回响的链结 -->
+        <a href="#link-to-app" class="cta-button">开启体验</a>
+    </section>
+
+    <div class="container">
+        <!-- 2. 介绍与用法 -->
+        <div class="info-grid">
+            <div class="card">
+                <h2>关于灵频回响</h2>
+                <p>“灵频回响”是一套基于量子声学与古老冥想智慧结合的频率生成系统。它不只是声音，更是一种能量的传导。</p>
+                <br>
+                <p>我们捕捉自然界中细微的“超然”频率，将其转化为可听见的音频流，帮助使用者在喧嚣的现代生活中瞬间找回内心的宁静与清明，实现意识的升维。</p>
+            </div>
+
+            <div class="card">
+                <h2>使用说明</h2>
+                <ul class="step-list">
+                    <li><strong>准备环境：</strong> 请寻找一个安静、舒适的空间，建议调暗灯光。</li>
+                    <li><strong>佩戴设备：</strong> 为了获得最佳的沉浸式体验，<span style="color:var(--accent-color)">必须佩戴立体声耳机</span>。</li>
+                    <li><strong>调整呼吸：</strong> 点击链接开始播放，闭上双眼，跟随声音调整呼吸频率。</li>
+                    <li><strong>专注意念：</strong> 感受声波在脑海中的回响，释放杂念，进入心流状态。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 1. 公司信息 & 4/5. 技术合作方展示 -->
+        <footer>
+            <div class="footer-content">
+                <!-- 网站运营主体信息 (示例) -->
+                <div class="main-company">
+                    <h3>联系我们</h3>
+                    <p style="margin-top:15px; color:#ccc;">
+                        如果您对灵频回响有任何疑问或合作意向，请通过以下方式联系：
+                    </p>
+                    <div class="address" style="margin-top:20px;">
+                        <p>邮箱: contact@spiritecho.com</p>
+                        <p>地址: (此处填写您的运营公司地址)</p>
+                    </div>
+                </div>
+
+                <!-- 技术支持方 (重点展示) -->
+                <div class="tech-partner">
+                    <div class="tech-partner-box">
+                        <span class="tech-label">技术支持与战略合作伙伴</span>
+                        
+                        <!-- 嵌入 SVG LOGO -->
+                        <div class="partner-logo">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+                              <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                  <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+                                  <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+                                </linearGradient>
+                              </defs>
+                              <g transform="translate(50, 60)">
+                                <circle cx="0" cy="0" r="10" fill="#fff" opacity="0.9"/>
+                                <path d="M-20,0 A20,20 0 0,0 20,0" fill="none" stroke="url(#grad1)" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+                                <path d="M-30,0 A30,30 0 0,0 30,0" fill="none" stroke="url(#grad1)" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+                                <path d="M-40,0 A40,40 0 0,0 40,0" fill="none" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+                                <path d="M-20,0 A20,20 0 0,1 20,0" fill="none" stroke="url(#grad1)" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+                                <path d="M-30,0 A30,30 0 0,1 30,0" fill="none" stroke="url(#grad1)" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+                              </g>
+                              <text x="110" y="55" font-family="Arial, sans-serif" font-weight="bold" font-size="32" fill="#fff" letter-spacing="2">BEYONDECHO</text>
+                              <text x="110" y="85" font-family="sans-serif" font-size="18" fill="#ddd" letter-spacing="4">超然回聲</text>
+                            </svg>
+                        </div>
+                        
+                        <p style="font-weight: bold; color: #fff;">超然回聲 BEYONDECHO PTE. LTD.</p>
+                        <div class="address">
+                            <p>346C KING GEORGE'S AVENUE,</p>
+                            <p>KING GEORGE'S BUILDING,</p>
+                            <p>SINGAPORE 208577</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; color: #555; font-size: 0.8rem;">
+                © 2023 Spirit Echo. Powered by BeyondEcho Pte. Ltd.
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
